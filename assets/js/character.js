@@ -55,14 +55,15 @@ class Character{
         let sectionRight = document.querySelector("#right");
         
         
-        if(this._helmet != false){
+        if(this._helmet != false){ //si un casque est porté
             sectionCenter.classList.add("helmet");
         }else{
             sectionCenter.classList.remove("helmet");
         }
         
-        if(this._axe != false){
+        if(this._axe != false){ //si une hache est porté
             if(this._axe.hand === "left"){
+                sectionLeft.classList.remove("shield");
                 sectionLeft.classList.add("axe");
                 sectionLeft.style.transform = "scaleX(-1)";
             }else{
@@ -74,6 +75,7 @@ class Character{
         }
         
         if(this._shield != false){
+            sectionLeft.classList.remove("axe");
             sectionLeft.classList.add("shield");
         }else{
             sectionLeft.classList.remove("shield");
