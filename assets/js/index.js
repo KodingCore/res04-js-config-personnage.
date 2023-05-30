@@ -14,13 +14,14 @@ function initialize(){
 
 function listener()
 {
+   
    for(let btn of btns)
    {
       
       btn.addEventListener("click", function(event)
       {
          
-         if(event.target.getAttribute("id") === "helmet-btn")
+         if(event.target.id === "helmet-btn")
          {
             
             if(!hero.helmet){
@@ -29,8 +30,9 @@ function listener()
             }else{
                hero.helmet = false;
             }
+            
          }
-         else if(event.target.getAttribute("id") === "shield-btn")
+         else if(event.target.id === "shield-btn")
          {
             if(!hero.shield){
                hero.shield = new Shield("bouclier de verre", 1, 5);
@@ -39,7 +41,7 @@ function listener()
             }
             
          }
-         else if(event.target.getAttribute("id") === "axe-btn")
+         else if(event.target.id === "axe-btn")
          {
             if(!hero.axe){
                hero.axe = new Axe("Hache en bois", "left", 5, 10);
@@ -48,7 +50,7 @@ function listener()
             }
             
          }
-         else if(event.target.getAttribute("id") === "sword-btn")
+         else if(event.target.id === "sword-btn")
          {
             if(!hero.sword){
                hero.sword = new Sword("épée des ténèbres", "right", 180, 100);

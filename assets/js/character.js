@@ -1,51 +1,50 @@
 class Character{
     
-    _helmet;
-    _axe;
-    _shield;
-    _sword;
+    #helmet;
+    #axe;
+    #shield;
+    #sword;
     
     constructor(){
-        this._helmet = false;
-        this._axe = false;
-        this._shield = false;
-        this._sword = false;
+        this.#helmet = false;
+        this.#axe = false;
+        this.#shield = false;
+        this.#sword = false;
     }
     
-    get helmet(){
-        return this._helmet;
+    get helmet (){
+        return this.#helmet;
     }
     
-    get axe(){
-        return this._axe;
+    get axe (){
+        return this.#axe;
     }
     
-    get shield(){
-        return this._shield;
+    get shield (){
+        return this.#shield;
     }
     
-    get sword(){
-        return this._sword;
+    get sword (){
+        return this.#sword;
     }
     
-    set helmet(helmet){
-        this._helmet = helmet;
+    set helmet (helmet){
+        this.#helmet = helmet;
         this.render();
     }
     
-    set axe(axe){
-        this._axe = axe;
+    set axe (axe){
+        this.#axe = axe;
         this.render();
     }
     
-    set shield(shield){
-        this._shield = shield;
+    set shield (shield){
+        this.#shield = shield;
         this.render();
     }
     
-    set sword(sword){
-        this._sword = sword;
-        console.log(this._helmet + " " + this._axe + " " + this._shield + " " + this._sword);
+    set sword (sword){
+        this.#sword = sword;
         this.render();
     }
     
@@ -54,15 +53,14 @@ class Character{
         let sectionCenter = document.querySelector("#center");
         let sectionRight = document.querySelector("#right");
         
-        
-        if(this._helmet != false){ //si un casque est porté
+        if(this.#helmet !== false){ //si un casque est porté
             sectionCenter.classList.add("helmet");
         }else{
             sectionCenter.classList.remove("helmet");
         }
         
-        if(this._axe != false){ //si une hache est porté
-            if(this._axe.hand === "left"){
+        if(this.#axe !== false){ //si une hache est porté
+            if(this.axe.hand === "left"){
                 sectionLeft.classList.remove("shield");
                 sectionLeft.classList.add("axe");
                 sectionLeft.style.transform = "scaleX(-1)";
@@ -74,15 +72,15 @@ class Character{
             sectionLeft.classList.remove("axe");
         }
         
-        if(this._shield != false){
+        if(this.#shield !== false){
             sectionLeft.classList.remove("axe");
             sectionLeft.classList.add("shield");
         }else{
             sectionLeft.classList.remove("shield");
         }
         
-        if(this._sword != false){
-            if(this._sword.hand === "left"){
+        if(this.#sword !== false){
+            if(this.sword.hand === "left"){
                 sectionLeft.classList.add("sword");
                 sectionLeft.style.transform = "scaleX(-1)";
             }else{
@@ -97,4 +95,4 @@ class Character{
     } 
 }
 
-export { Character };
+export { Character }
